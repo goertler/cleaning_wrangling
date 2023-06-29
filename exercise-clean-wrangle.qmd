@@ -5,10 +5,39 @@ format: html
 ---
 
 ## Data
+Data on abundance, size and fishing pressure of California spiny lobster (Panulirus interruptus) are collected along the mainland coast of the Santa Barbara Channel. This dataset contains two tables. 1) Abundance and size data collected annually by divers in late summer before the start of the fishing season at five SBC LTER long term kelp forest study sites, and 2) Fishing pressure, as determined by counting the number of commercial trap floats. Data are collected every two to four weeks during the lobster fishing season (October to March) at nine sites along the mainland.
 
 ## Setup
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+```
+
 
 ## Read and explore data
+```{r}
+
+# Read in data
+lobster_abundance <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&entityid=f32823fba432f58f66c06b589b7efac6")
+
+lobster_traps <- read_csv("https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-sbc.77.8&entityid=66dd61c75bda17c23a3bce458c56ed84")
+
+```
+```{r}
+head(lobster_abundance)
+
+head(lobster_traps)
+
+str(lobster_abundance)
+
+str(lobster_traps)
+
+summary(lobster_abundance)
+
+summary(lobster_traps)
+```
 
 ## Exercise 1
 
