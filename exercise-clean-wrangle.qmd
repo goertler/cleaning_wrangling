@@ -61,10 +61,20 @@ unique(abundance_clean$SIZE_MM)
 
 
 ## Exercise 2 
-Problem: data are in a wide format and we want the data in a long format instead
 
-GOAL: 
+GOAL: Create a subset with the data for the lobsters at Arroyo Quemado (AQUE) that have a carapace length greater than 70 mm.
+
+```{r}
+subset <- lobster_abundance %>% 
+  filter(SITE == "AQUE" & SIZE_MM > 70)
+```
+
 ## Exercise 3 
+GOAL: Create a subset with the traps’ information at all sites where abundance data is not NA. Note that you first have to identify which are these sites.
+
+```{r}
+
+```
 
 ## Exercise 4 
 
