@@ -73,11 +73,31 @@ subset <- lobster_abundance %>%
 GOAL: Create a subset with the traps’ information at all sites where abundance data is not NA. Note that you first have to identify which are these sites.
 
 ```{r}
+site <- setdiff(lobster_traps$SITE, lobster_abundance$SITE) 
+
+subset_ex_3 <- lobster_abundance %>% 
+  filter(SITE, -"ABUR", "AHND", "GOLB", "AHND to AQUE", "AHND TO AQUE") %>% 
+  filter(COUNT !is.na())
 
 ```
 
 ## Exercise 4 
+GOAL: Calculate totals by site and year
+```{r}
+lobster_abundance %>% 
+  group_by(SITE, YEAR) %>% 
+  summarise(catch_sum = sum(COUNT))
+```
 
 ## Exercise 5 
+GOAL: Joining two data frames
+```{r}
+
+```
 
 ## Exercise 6
+GOAL: Adding a new column
+```{r}
+
+```
+
